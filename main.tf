@@ -14,9 +14,10 @@ data "aws_ami" "app_ami" {
   owners = ["979382823631"] # Bitnami
 }
 
-resource "aws_instance" “acme” {
+resource "aws_instance" "acme" {
   ami           = data.aws_ami.app_ami.id
   instance_type = var.instance_type
   tags = {
-    Name = “Hello ACME Corp"
+    Name = "ACME Corp Presentation"
   }
+}
